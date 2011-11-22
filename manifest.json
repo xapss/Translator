@@ -1,6 +1,6 @@
 {
-  "name": "Studentify Translator",
-  "version": "1.0",
+  "name": "Studentify Translate",
+  "version": "1.0.3",
   "description": "Easily translate your banking website: Safe and super fast! By Studentify.nl",
 	"icons": { "16": "icon16.png",
 	           "48": "icon48.png",

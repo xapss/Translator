@@ -1,9 +1,11 @@
 $(document).ready(function() {
 	var dictionary = {
 		"Uw veiligheid": "Your security",
-		"Gebruik bij het inloggen op Rabo Internetbankieren de I-toets van uw  Random Reader. Gebruik de S-toets alleen bij het verzenden. Ziet u iets afwijkends? Bel direct de Helpdesk Internetbankieren: 0900 - 0905 (lokaal tarief).": "Only use the 'I' button from your Random Reader for logging in to Rabo Internetbanking. Only use the 'S' button if you want to send payments. Do you see something weird? Call the Helpdesk Internetbanking (DUTCH): 0900-0905 (local tariff)",
 		"Meer informatie": "More information",
 		"Heeft u geen toegang tot Rabo Internetbankieren?": "No access to Rabo Internetbanking?",
+		"Gebruik bij het inloggen op Rabo Internetbankieren de I-toets van uw  Random Reader.": "Only use the 'I' button from your Random Reader for logging in to Rabo Internetbanking.",
+		"Gebruik de S-toets alleen bij het verzenden.": "Only use the 'S' button if you want to send payments.",
+		"Ziet u iets afwijkends? Bel direct de Helpdesk Internetbankieren:": "Do you see something weird? Call the Helpdesk Internetbanking (DUTCH):",
 		"Aanvragen": "Request",
 		"Met Rabo Internetbankieren kunt u altijd via Internet uw rekeningen inzien en transacties uitvoeren.": "With Rabo Internetbanking you can always access your bank account details and send payments.",
 		"Informatie over Rabo Internetbankieren": "More information on Rabo Internetbanking (DUTCH)",
@@ -133,7 +135,8 @@ $(document).ready(function() {
 		"Nieuw": "New",
 		"Signeercode": "Signing code",
 		"Ga alleen verder als de adresregel begint met https://bankieren.rabobank.nl/...": "Only continue when the URL bar starts with https://bankieren.rabobank.nl/...",
-		"Hoe controleert u de veiligheid van uw verbinding?": "How to check the security of the connection (DUTCH)"		
+		"Hoe controleert u de veiligheid van uw verbinding?": "How to check the security of the connection (DUTCH)",
+		"0900 - 0905 (lokaal tarief).": "0900-0905 (local tariff)"
 	}
 
   function get_definition(str) {
@@ -165,5 +168,10 @@ $(document).ready(function() {
 		$('#brt_but_annuleren').css('background-image', 'url('+chrome.extension.getURL("button-cancel.png")+')');
 	});
 	var skiheight = $('img#skimage').height();
-	$('img#skimage').before('<img src="'+chrome.extension.getURL("payment-"+skiheight+".png")+'" style="position: absolute;" />');
+	if (skiheight >= 500) {
+		skiheight = "243";
+	} else {
+		skiheight = "single";
+	}
+	$('img#skimage').before('<img src="'+chrome.extension.getURL("payment-"+skiheight+".png")+'" style="position: absolute; top: -55px; right: -600px;" />');
 });
