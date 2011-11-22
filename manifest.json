@@ -1,0 +1,19 @@
+{
+  "name": "Studentify Translator",
+  "version": "1.0",
+  "description": "Easily translate your banking website: Safe and super fast! By Studentify.nl",
+	"icons": { "16": "icon16.png",
+	           "48": "icon48.png",
+	          "128": "icon128.png" },
+  "browser_action": {
+    "default_icon": "icon48.png",
+		"default_title": "Turn on Studentify Translate",
+		"default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+			"matches": ["https://bankieren.rabobank.nl/*"],
+      "js": ["jquery.js","translate.js","action.js"]
+    }
+  ]
+}
